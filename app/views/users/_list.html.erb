@@ -1,9 +1,23 @@
-<div class="profile-container">
+<table>
   <h2>User info</h2>
-  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "https://via.placeholder.com/100x100" %>
-  <p>name:<span class="profile-name"><%= book.user.name %></span></p>
-  <p>introduction<span class="profile-introduction"><%= user.introduction %></span></p>
-  <% if user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
-  <% end %>
-</div>
+  <thead>
+    <tr>
+       <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "https://via.placeholder.com/100x100"%>
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+      <th>Name</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>Introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+
+        <%= link_to edit_user_path(current_user) do %>
+        <span>edit profile</span>
+        <% end %>
+
+  </tbody>
+</table>
