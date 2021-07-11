@@ -1,11 +1,11 @@
-<table>
+<table class="table table-user">
   <h2>User info</h2>
   <thead>
     <tr>
-       <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "https://via.placeholder.com/100x100"%>
+      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg"%>
     </tr>
   </thead>
-    <tbody>
+  <tbody>
     <tr>
       <th>Name</th>
       <th><%= user.name %></th>
@@ -14,10 +14,12 @@
       <th>Introduction</th>
       <th><%= user.introduction %></th>
     </tr>
-
-        <%= link_to edit_user_path(current_user) do %>
-        <span>edit profile</span>
+    <tr>
+      <th colspan="2">
+        <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block" do %>
+         <%= fa_icon("user") %>
         <% end %>
-
+      </th>
+    </tr>
   </tbody>
 </table>

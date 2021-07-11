@@ -10,6 +10,35 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ @import "font-awesome";
+ 	
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;;
+ }
+ 
+ .error {
+  color: red;
+}
+.error-message {
+  font-size: 12px;
+  list-style: square;
+  margin-left: 60px;
+}
+ .devise-setting {
+     margin-left:30px;
+ }
+ 
+ .main {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    
+}
+
